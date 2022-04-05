@@ -1,5 +1,7 @@
 package ist;
 
+import java.util.ArrayList;
+
 public class BinarySearchTree {
     Node root;
     
@@ -24,6 +26,39 @@ public class BinarySearchTree {
         //
 
         return new Node(null);
+    }
+
+    public boolean contains(Integer data){
+
+        return true;
+    }
+
+    public String toString(){
+        Node toPrint = this.root;
+
+        StringBuilder stringBuilder = new StringBuilder();
+        
+        while(toPrint != null){
+            stringBuilder.append(toPrint.data);
+            stringBuilder.append(" -> ");
+            toPrint = toPrint.right;
+        }
+
+        stringBuilder.append("Null");
+
+        return stringBuilder.toString();
+    }
+
+    public BinarySearchTree rebalance(){
+        BinarySearchTree bst = new BinarySearchTree();
+
+        return bst;
+    }
+
+    public ArrayList<Integer> partition(Node data){
+        ArrayList<Integer> nums = new ArrayList<>();
+
+        return nums;
     }
 
 

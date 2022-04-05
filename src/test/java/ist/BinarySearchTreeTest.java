@@ -10,4 +10,34 @@ public class BinarySearchTreeTest {
     public void testConstructor() {
         
     }
+
+    @Test
+    public void testInsert() {
+        
+    }
+
+    @Test
+    public void testDelete() {
+        
+    }
+
+    @Test
+    public void testContains() {
+        
+    }
+
+    @Test
+    public void testToString() {
+        
+    }
+
+    @Test
+    public void testRebalance() {
+        
+    }
+
+    @Test
+    public void testPartition() {
+        
+    }
 }
