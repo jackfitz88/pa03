@@ -71,17 +71,20 @@ public class BinarySearchTree {
     }
 
     public String toString(){
-        Node toPrint = this.root;
-
+        Node current = this .root;
         StringBuilder stringBuilder = new StringBuilder();
-        
-        while(toPrint != null){
-            stringBuilder.append(toPrint.data);
-            stringBuilder.append(" -> ");
-            toPrint = toPrint.right;
-        }
 
-        stringBuilder.append("Null");
+        if(current != null){
+            stringBuilder.append(this.inOrderTraversalNode(current.left));
+
+            stringBuilder.append(current.data);
+            stringBuilder.append(" ");
+
+            stringBuilder.append(this.inOrderTraversalNode(current.right));
+        }
+        else{
+            stringBuilder.append("Null ");
+        }
 
         return stringBuilder.toString();
     }
