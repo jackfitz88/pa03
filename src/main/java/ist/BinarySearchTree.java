@@ -5,16 +5,53 @@ import java.util.ArrayList;
 public class BinarySearchTree {
     Node root;
     
-    public Node insert(Integer data){
+    public void insert(Integer data){
+        this.root = insertNode(this.root, data);
+    }
 
-        return new Node(null);
+    private Node insertNode(Node current, Integer data){
+        // if the current is null just return the node
+        if(current == null){
+            return new Node(data);
+        }
 
+        // compare the data to the current node
+        if(data < current.data){
+            // before recurse you would have to check if left is null
+            current.left = this.insertNode(current.left, data);
+        }
+        else if(data > current.data){
+            // before recurse you would have to check if right is null
+
+            current.right = this.insertNode(current.right, data);
+        }
+
+        return current;
+    }
+
+    public String inOrderTraversal(){
+        return this.inOrderTraversalNode(this.root);
+    }
+
+    private String inOrderTraversalNode(Node current){
+        StringBuilder stringBuilder = new StringBuilder();
+
+        if(current != null){
+            stringBuilder.append(this.inOrderTraversalNode(current.left));
+
+            stringBuilder.append(current.data);
+            stringBuilder.append(" ");
+
+            stringBuilder.append(this.inOrderTraversalNode(current.right));
+        }
+
+        return stringBuilder.toString();
     }
 
     public Node delete(Integer data){
-        //if it is teh root
+        //if it is the root
 
-        // if tit isn't in there
+        // if it isn't in there
 
         //no child
         //just delete it
