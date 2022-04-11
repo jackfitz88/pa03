@@ -40,7 +40,16 @@ public class BinarySearchTreeTest {
 
     @Test
     public void testDelete() {
-        
+        BinarySearchTree tree = new BinarySearchTree();
+        tree.insert(100);
+        tree.insert(50);
+        tree.insert(75);
+        tree.insert(60);
+        tree.insert(150);
+
+        tree.delete(50);
+
+        assertEquals("60 75 100 150", tree.inOrderTraversal());
     }
 
     @Test
@@ -50,7 +59,14 @@ public class BinarySearchTreeTest {
 
     @Test
     public void testToString() {
-        
+        BinarySearchTree tree = new BinarySearchTree();
+        tree.insert(100);
+        tree.insert(50);
+        tree.insert(75);
+        tree.insert(60);
+        tree.insert(150);
+
+        assertEquals("100 50 75 60 150", tree.toString());
     }
 
     @Test

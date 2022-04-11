@@ -22,7 +22,6 @@ public class BinarySearchTree {
         }
         else if(data > current.data){
             // before recurse you would have to check if right is null
-
             current.right = this.insertNode(current.right, data);
         }
 
@@ -49,18 +48,40 @@ public class BinarySearchTree {
     }
 
     public Node delete(Integer data){
+        return deleteNode(this.root, data);
+    }
+
+    private Node deleteNode(Node current, Integer data){
         //if it is the root
-
+        if(current == this.root){
+            this.root = null;
+        }
         // if it isn't in there
-
-        //no child
-        //just delete it
-
-        //one child
-        //shift up the child
-
+        if(data < current.data){
+            // before recurse you would have to check if left is null
+            current.left = this.deleteNode(current.left, data);
+        }
+        else if(data > current.data){
+            // before recurse you would have to check if right is null
+            current.right = this.deleteNode(current.right, data);
+        }
+        else{
+            //no child
+            if(current.left == null && current.right == null){
+            //just delete it
+            return null;
+            }
+            //one child
+            else if(current.left == null){
+                return current.right;
+            }
+            else if(current.right == null){
+                return current.left;
+            }
+        }
+        
         //two children
-        //
+        //(find the smallest value in the biggest subtree... go right then left all the way)
 
         return new Node(null);
     }
@@ -71,7 +92,7 @@ public class BinarySearchTree {
     }
 
     public String toString(){
-        Node current = this .root;
+        Node current = this.root;
         StringBuilder stringBuilder = new StringBuilder();
 
         if(current != null){
@@ -82,9 +103,9 @@ public class BinarySearchTree {
 
             stringBuilder.append(this.inOrderTraversalNode(current.right));
         }
-        else{
-            stringBuilder.append("Null ");
-        }
+        // else{
+        //     stringBuilder.append("Null ");
+        // }
 
         return stringBuilder.toString();
     }
@@ -92,7 +113,49 @@ public class BinarySearchTree {
     public BinarySearchTree rebalance(){
         BinarySearchTree bst = new BinarySearchTree();
 
+        // get arraylist of current tree using in order
+
+        //insert recursivley
+
+        
         return bst;
+    }
+
+    public BinarySearchTree insertMidPoint(ArrayList<Integer> list, int start, int end){
+        BinarySearchTree bst = new BinarySearchTree();
+
+        //chcek if the start == end
+        if(start == end){
+            insert(start);
+        }
+        //find midpoint
+        else{
+
+        }
+        //insert the midpoint
+
+        //call with the left side(update the end index)
+
+        //call wiht the right side(update the start index)
+
+        return bst;
+    }
+
+    protected ArrayList<Integer> getSortedList(Node current){
+        //create new array list
+        ArrayList<Integer> sortedList = new ArrayList<>();
+        // check is current is null
+
+        //add all the things from the left of the tree
+        //recursive
+
+        //add the current node
+
+        //add all the things from the right of the tree
+        //recursive
+
+        //return the arraylist
+        return sortedList;
     }
 
     public ArrayList<Integer> partition(Node data){
