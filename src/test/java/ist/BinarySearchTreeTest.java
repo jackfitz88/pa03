@@ -54,7 +54,15 @@ public class BinarySearchTreeTest {
 
     @Test
     public void testContains() {
-        
+        BinarySearchTree tree = new BinarySearchTree();
+        tree.insert(100);
+        tree.insert(50);
+        tree.insert(75);
+        tree.insert(60);
+        tree.insert(150);
+
+        assertEquals(true, tree.contains(50));
+        assertEquals(false, tree.contains(80));
     }
 
     @Test
@@ -76,6 +84,15 @@ public class BinarySearchTreeTest {
 
     @Test
     public void testPartition() {
-        
+        BinarySearchTree tree = new BinarySearchTree();
+        tree.insert(100);
+        tree.insert(50);
+        tree.insert(75);
+        tree.insert(60);
+        tree.insert(150);
+
+        assertEquals("[100 75 60 150]", tree.partition(55).toString());
+        assertEquals("[100 150]", tree.partition(75).toString());
+        assertEquals("[]", tree.partition(150).toString());
     }
 }

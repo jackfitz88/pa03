@@ -87,8 +87,22 @@ public class BinarySearchTree {
     }
 
     public boolean contains(Integer data){
+        Node current = this.root;
 
-        return true;
+        while(current != null){
+            if(data < current.data){
+                current = current.left;
+            }
+            else if(data > current.data){
+                current = current.right;
+            }
+            else{
+                return true;
+            }
+        }
+        
+        return false;
+
     }
 
     public String toString(){
@@ -103,9 +117,9 @@ public class BinarySearchTree {
 
             stringBuilder.append(this.inOrderTraversalNode(current.right));
         }
-        // else{
-        //     stringBuilder.append("Null ");
-        // }
+        else{
+            stringBuilder.append("Null ");
+        }
 
         return stringBuilder.toString();
     }
@@ -129,7 +143,8 @@ public class BinarySearchTree {
             insert(start);
         }
         //find midpoint
-        else{
+        else if(start != end){
+            int midpoint = end + start / 2;
 
         }
         //insert the midpoint
@@ -145,7 +160,9 @@ public class BinarySearchTree {
         //create new array list
         ArrayList<Integer> sortedList = new ArrayList<>();
         // check is current is null
+        if(current != null){
 
+        }
         //add all the things from the left of the tree
         //recursive
 
@@ -158,8 +175,15 @@ public class BinarySearchTree {
         return sortedList;
     }
 
-    public ArrayList<Integer> partition(Node data){
+    public ArrayList<Integer> partition(Integer data){
         ArrayList<Integer> nums = new ArrayList<>();
+        Node current = this.root;
+        
+        while(current != null){
+            if(current.data.compareTo(data) >= 1){
+                nums.add(current.data);
+            }
+        }
 
         return nums;
     }
