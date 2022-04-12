@@ -143,15 +143,14 @@ public class BinarySearchTree {
         }
         //find midpoint
         else if(start != end){
+            //insert the midpoint
             int midpoint = end + start / 2;
+            insert(midpoint);
+            //call with the left side(update the end index)
 
+            //call wiht the right side(update the start index)
         }
-        //insert the midpoint
-
-        //call with the left side(update the end index)
-
-        //call wiht the right side(update the start index)
-
+        
         return bst;
     }
 
@@ -159,12 +158,12 @@ public class BinarySearchTree {
         //create new array list
         ArrayList<Integer> sortedList = new ArrayList<>();
         // check is current is null
-        if(current != null){
-
+        if(current == null){
+            
         }
         //add all the things from the left of the tree
         //recursive
-
+        
         //add the current node
 
         //add all the things from the right of the tree

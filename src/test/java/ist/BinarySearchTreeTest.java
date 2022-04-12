@@ -63,6 +63,7 @@ public class BinarySearchTreeTest {
 
         assertEquals(true, tree.contains(50));
         assertEquals(false, tree.contains(80));
+        assertEquals(true, tree.contains(150));
     }
 
     @Test
