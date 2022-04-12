@@ -94,21 +94,26 @@ public class BinarySearchTree {
     }
 
     public boolean contains(Integer data){
+
         Node current = this.root;
 
         while(current != null){
             if(data < current.data){
+                if(current.data.compareTo(data) == 0){
+                    return true;
+                }
                 current = current.left;
             }
             else if(data > current.data){
+                if(current.data.compareTo(data) == 0){
+                    return true;
+                }
                 current = current.right;
             }
-            else{
-                return true;
-            }
         }
-        
+
         return false;
+
     }
 
     public String toString(){
