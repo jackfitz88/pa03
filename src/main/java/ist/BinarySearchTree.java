@@ -51,10 +51,13 @@ public class BinarySearchTree {
         return deleteNode(this.root, data);
     }
 
-    private Node deleteNode(Node current, Integer data){
+    private Node deleteNode(Node current, Integer data) throws IllegalArgumentException{
         //if it is the root
         if(current == this.root){
             this.root = null;
+        }
+        if(data == null){
+            throw new IllegalArgumentException("Data is not in the list.");
         }
         // if it isn't in there
         if(data < current.data){
@@ -150,7 +153,7 @@ public class BinarySearchTree {
 
             //call wiht the right side(update the start index)
         }
-        
+
         return bst;
     }
 
@@ -159,16 +162,19 @@ public class BinarySearchTree {
         ArrayList<Integer> sortedList = new ArrayList<>();
         // check is current is null
         if(current == null){
-            
+            return sortedList;
         }
-        //add all the things from the left of the tree
-        //recursive
+        if(current != null){
+            //add all the things from the left of the tree
+            //recursive
+            getSortedList(current.left);
+            //add the current node
+            sortedList.add(current.data);
+            //add all the things from the right of the tree
+            //recursive
+            getSortedList(current.right);
+        }
         
-        //add the current node
-
-        //add all the things from the right of the tree
-        //recursive
-
         //return the arraylist
         return sortedList;
     }
