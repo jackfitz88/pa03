@@ -91,8 +91,8 @@ public class BinarySearchTreeTest {
         tree.insert(60);
         tree.insert(150);
 
-        assertEquals("[100 75 60 150]", tree.partition(55).toString());
-        assertEquals("[100 150]", tree.partition(75).toString());
+        assertEquals("[100, 75, 60, 150]", tree.partition(55).toString());
+        assertEquals("[100, 150]", tree.partition(75).toString());
         assertEquals("[]", tree.partition(150).toString());
     }
 }

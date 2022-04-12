@@ -102,7 +102,6 @@ public class BinarySearchTree {
         }
         
         return false;
-
     }
 
     public String toString(){
@@ -180,8 +179,17 @@ public class BinarySearchTree {
         Node current = this.root;
         
         while(current != null){
-            if(current.data.compareTo(data) >= 1){
-                nums.add(current.data);
+            if(data < current.data){
+                if(current.data.compareTo(data) >= 1){
+                    nums.add(current.data);
+                }
+                current = current.left;
+            }
+            else if(data > current.data){
+                if(current.data.compareTo(data) >= 1){
+                    nums.add(current.data);
+                }
+                current = current.right;
             }
         }
 
