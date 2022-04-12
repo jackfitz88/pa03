@@ -46,10 +46,13 @@ public class BinarySearchTreeTest {
         tree.insert(75);
         tree.insert(60);
         tree.insert(150);
+        
 
-        tree.delete(50);
+        tree.delete(150);
+        //tree.delete(75);
 
-        assertEquals("60 75 100 150", tree.inOrderTraversal());
+        assertEquals("50 60 75 100 ", tree.inOrderTraversal());
+        //assertEquals("50 60 100 ", tree.inOrderTraversal());
     }
 
     @Test
@@ -80,7 +83,14 @@ public class BinarySearchTreeTest {
 
     @Test
     public void testRebalance() {
-        
+        BinarySearchTree tree = new BinarySearchTree();
+        tree.insert(100);
+        tree.insert(50);
+        tree.insert(75);
+        tree.insert(60);
+        tree.insert(150);
+
+
     }
 
     @Test

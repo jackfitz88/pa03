@@ -53,9 +53,9 @@ public class BinarySearchTree {
 
     private Node deleteNode(Node current, Integer data) throws IllegalArgumentException{
         //if it is the root
-        if(current == this.root){
-            this.root = null;
-        }
+        // if(current == this.root){
+        //     return null;
+        // }
         if(data == null){
             throw new IllegalArgumentException("Data is not in the list.");
         }
@@ -81,10 +81,14 @@ public class BinarySearchTree {
             else if(current.right == null){
                 return current.left;
             }
+            //two children
+            //(find the smallest value in the biggest subtree... go right then left all the way)
+            // else if(){
+
+            // }
         }
         
-        //two children
-        //(find the smallest value in the biggest subtree... go right then left all the way)
+        
 
         return new Node(null);
     }
@@ -130,7 +134,7 @@ public class BinarySearchTree {
         BinarySearchTree bst = new BinarySearchTree();
 
         // get arraylist of current tree using in order
-
+        
         //insert recursivley
 
         
@@ -174,7 +178,7 @@ public class BinarySearchTree {
             //recursive
             getSortedList(current.right);
         }
-        
+
         //return the arraylist
         return sortedList;
     }
